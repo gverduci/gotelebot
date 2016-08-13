@@ -18,7 +18,7 @@ type SendMessageOptional struct {
 	// Disables link previews for links in this message
 	DisableWebPagePreview *bool
 	ReplyToMessageId      *int
-	ReplyMarkup           *types.ReplyMarkup
+	ReplyMarkup           types.ReplyMarkup
 }
 
 func (opt *SendMessageOptional) AppendPayload(payload *url.Values) {
@@ -32,7 +32,7 @@ func (opt *SendMessageOptional) AppendPayload(payload *url.Values) {
 		payload.Add("reply_to_message_id", strconv.Itoa(*opt.ReplyToMessageId))
 	}
 	if opt.ReplyMarkup != nil {
-		jsonStr, _ := (*opt.ReplyMarkup).ToJson()
+		jsonStr, _ := (opt.ReplyMarkup).ToJson()
 		payload.Add("reply_markup", jsonStr)
 	}
 }
@@ -42,7 +42,7 @@ type SendPhotoOptional struct {
 	// Photo caption
 	Caption          *string
 	ReplyToMessageId *int
-	ReplyMarkup      *types.ReplyMarkup
+	ReplyMarkup      types.ReplyMarkup
 }
 
 func (opt *SendPhotoOptional) AppendPayload(payload *url.Values) {
@@ -53,7 +53,7 @@ func (opt *SendPhotoOptional) AppendPayload(payload *url.Values) {
 		payload.Add("reply_to_message_id", strconv.Itoa(*opt.ReplyToMessageId))
 	}
 	if opt.ReplyMarkup != nil {
-		jsonStr, _ := (*opt.ReplyMarkup).ToJson()
+		jsonStr, _ := (opt.ReplyMarkup).ToJson()
 		payload.Add("reply_markup", jsonStr)
 	}
 }
@@ -65,7 +65,7 @@ type SendAudioOptional struct {
 	Performer        *string
 	Title            *string
 	ReplyToMessageId *int
-	ReplyMarkup      *types.ReplyMarkup
+	ReplyMarkup      types.ReplyMarkup
 }
 
 func (opt *SendAudioOptional) AppendPayload(payload *url.Values) {
@@ -82,7 +82,7 @@ func (opt *SendAudioOptional) AppendPayload(payload *url.Values) {
 		payload.Add("reply_to_message_id", strconv.Itoa(*opt.ReplyToMessageId))
 	}
 	if opt.ReplyMarkup != nil {
-		jsonStr, _ := (*opt.ReplyMarkup).ToJson()
+		jsonStr, _ := (opt.ReplyMarkup).ToJson()
 		payload.Add("reply_markup", jsonStr)
 	}
 }
@@ -90,7 +90,7 @@ func (opt *SendAudioOptional) AppendPayload(payload *url.Values) {
 // Optional parameters for SendDocument method
 type SendDocumentOptional struct {
 	ReplyToMessageId *int
-	ReplyMarkup      *types.ReplyMarkup
+	ReplyMarkup      types.ReplyMarkup
 }
 
 func (opt *SendDocumentOptional) AppendPayload(payload *url.Values) {
@@ -98,7 +98,7 @@ func (opt *SendDocumentOptional) AppendPayload(payload *url.Values) {
 		payload.Add("reply_to_message_id", strconv.Itoa(*opt.ReplyToMessageId))
 	}
 	if opt.ReplyMarkup != nil {
-		jsonStr, _ := (*opt.ReplyMarkup).ToJson()
+		jsonStr, _ := (opt.ReplyMarkup).ToJson()
 		payload.Add("reply_markup", jsonStr)
 	}
 }
@@ -106,7 +106,7 @@ func (opt *SendDocumentOptional) AppendPayload(payload *url.Values) {
 // Optional parameters for SendSticker method
 type SendStickerOptional struct {
 	ReplyToMessageId *int
-	ReplyMarkup      *types.ReplyMarkup
+	ReplyMarkup      types.ReplyMarkup
 }
 
 func (opt *SendStickerOptional) AppendPayload(payload *url.Values) {
@@ -114,7 +114,7 @@ func (opt *SendStickerOptional) AppendPayload(payload *url.Values) {
 		payload.Add("reply_to_message_id", strconv.Itoa(*opt.ReplyToMessageId))
 	}
 	if opt.ReplyMarkup != nil {
-		jsonStr, _ := (*opt.ReplyMarkup).ToJson()
+		jsonStr, _ := (opt.ReplyMarkup).ToJson()
 		payload.Add("reply_markup", jsonStr)
 	}
 }
@@ -124,7 +124,7 @@ type SendVideoOptional struct {
 	Duration         *int
 	Caption          *string
 	ReplyToMessageId *int
-	ReplyMarkup      *types.ReplyMarkup
+	ReplyMarkup      types.ReplyMarkup
 }
 
 func (opt *SendVideoOptional) AppendPayload(payload *url.Values) {
@@ -138,7 +138,7 @@ func (opt *SendVideoOptional) AppendPayload(payload *url.Values) {
 		payload.Add("reply_to_message_id", strconv.Itoa(*opt.ReplyToMessageId))
 	}
 	if opt.ReplyMarkup != nil {
-		jsonStr, _ := (*opt.ReplyMarkup).ToJson()
+		jsonStr, _ := (opt.ReplyMarkup).ToJson()
 		payload.Add("reply_markup", jsonStr)
 	}
 }
@@ -147,7 +147,7 @@ func (opt *SendVideoOptional) AppendPayload(payload *url.Values) {
 type SendVoiceOptional struct {
 	Duration         *int
 	ReplyToMessageId *int
-	ReplyMarkup      *types.ReplyMarkup
+	ReplyMarkup      types.ReplyMarkup
 }
 
 func (opt *SendVoiceOptional) AppendPayload(payload *url.Values) {
@@ -158,7 +158,7 @@ func (opt *SendVoiceOptional) AppendPayload(payload *url.Values) {
 		payload.Add("reply_to_message_id", strconv.Itoa(*opt.ReplyToMessageId))
 	}
 	if opt.ReplyMarkup != nil {
-		jsonStr, _ := (*opt.ReplyMarkup).ToJson()
+		jsonStr, _ := (opt.ReplyMarkup).ToJson()
 		payload.Add("reply_markup", jsonStr)
 	}
 }
@@ -166,7 +166,7 @@ func (opt *SendVoiceOptional) AppendPayload(payload *url.Values) {
 // Optional parameters for SendLocation method
 type SendLocationOptional struct {
 	ReplyToMessageId *int
-	ReplyMarkup      *types.ReplyMarkup
+	ReplyMarkup      types.ReplyMarkup
 }
 
 func (opt *SendLocationOptional) AppendPayload(payload *url.Values) {
@@ -174,7 +174,7 @@ func (opt *SendLocationOptional) AppendPayload(payload *url.Values) {
 		payload.Add("reply_to_message_id", strconv.Itoa(*opt.ReplyToMessageId))
 	}
 	if opt.ReplyMarkup != nil {
-		jsonStr, _ := (*opt.ReplyMarkup).ToJson()
+		jsonStr, _ := (opt.ReplyMarkup).ToJson()
 		payload.Add("reply_markup", jsonStr)
 	}
 }

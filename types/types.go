@@ -206,7 +206,7 @@ type ReplyKeyboardMarkup struct {
 	Selective       bool       `json:"selective,omitempty"`
 }
 
-func (rkm *ReplyKeyboardMarkup) ToJson() (string, error) {
+func (rkm ReplyKeyboardMarkup) ToJson() (string, error) {
 	b, err := json.Marshal(rkm)
 	if err != nil {
 		return "", err
@@ -219,7 +219,7 @@ type ReplyKeyboardHide struct {
 	Selective    bool `json:"selective"`
 }
 
-func (rkm *ReplyKeyboardHide) ToJson() (string, error) {
+func (rkm ReplyKeyboardHide) ToJson() (string, error) {
 	rkm.HideKeyboard = true
 	b, err := json.Marshal(rkm)
 	if err != nil {
@@ -233,7 +233,7 @@ type ForceReply struct {
 	Selective  bool `json:"selective"`
 }
 
-func (rkm *ForceReply) ToJson() (string, error) {
+func (rkm ForceReply) ToJson() (string, error) {
 	rkm.ForceReply = true
 	b, err := json.Marshal(rkm)
 	if err != nil {
